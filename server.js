@@ -48,7 +48,6 @@ db.on('open' , ()=>{});
 //                                  MIDDLEWARE
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-
 //use public folder for static assets
 app.use(express.static('public'));
 
@@ -67,17 +66,10 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // ======================================================================================
 //                              SET UP VIEW ENGINE
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+// *** WITHOUT THIS MY RENDER WON'T WORK ***
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
-
-// mongoose.connect(MONGO_STRING, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// });
-// mongoose.connection.once('open', () => {
-//     console.log('connected to mongo');
-// });
-
 
 // ======================================================================================
 //                                  NON-RESTFUL ROUTES
@@ -102,9 +94,8 @@ app.get('/plants/', (req, res) => {
 
 // New '/<nameOfResource>/new' GET
 app.get('/plants/new/', (req, res) => {
-    res.send('hello new');
-
-    // res.render('New');
+    // res.send('hello new');
+    res.render('New');
 });
 
 // Delete '/<nameOfResource>/:id' DELETE
@@ -122,7 +113,6 @@ app.get('/plants/:id/edit', (req, res) => {
 app.get('/plants/:id/', (req, res) => {
     res.render('Edit');
 });
-
 
 // ======================================================================================
 //                                  LISTENER
