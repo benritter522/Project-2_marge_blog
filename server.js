@@ -52,7 +52,7 @@ db.on('open' , ()=>{});
 app.use(express.static('public'));
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
-app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
+app.use(express.urlencoded({ extended: true }));// extended: false - does not allow nested objects in query strings
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 
 //use method override
@@ -76,7 +76,7 @@ app.get('/' , (req, res) => {
 
 // Index '/<nameOfResource>/new' GET
 app.get('/plants/', (req, res) => {
-    res.render('Index');
+    res.send('hello index');
 })
 
 // New '/<nameOfResource>/new' GET
