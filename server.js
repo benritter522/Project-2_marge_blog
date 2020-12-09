@@ -58,6 +58,25 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+// replaced by method-override
+// app.use((req, res, next) => {
+//     if(req.query._method) console.log('change my method'); 
+//     next(); // **** VERY IMPORTANT ****
+// })
+
+// ======================================================================================
+//                              SET UP VIEW ENGINE
+//  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
+
+// mongoose.connect(MONGO_STRING, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// });
+// mongoose.connection.once('open', () => {
+//     console.log('connected to mongo');
+// });
 
 
 // ======================================================================================
