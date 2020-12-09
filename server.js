@@ -76,13 +76,15 @@ app.get('/' , (req, res) => {
 
 // Index '/<nameOfResource>/new' GET
 app.get('/plants/', (req, res) => {
-    // res.send('hello index');
-    res.render('Index');
+    res.send('hello index');
+    // res.render('Index');
 })
 
 // New '/<nameOfResource>/new' GET
 app.get('/plants/new/', (req, res) => {
-    res.render('New');
+    res.send('hello new');
+
+    // res.render('New');
 });
 
 // Delete '/<nameOfResource>/:id' DELETE
