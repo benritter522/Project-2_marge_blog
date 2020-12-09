@@ -9,12 +9,12 @@ class Index extends React.Component {
             //     // js="index.js"
             // >
                 <h1>Index Page</h1>
-                {/* <ul className="index-page">
-                    {
+            //     {/* <ul className="index-page">
+            //         {
                         
-                    }
-                </ul> */}
-            // </Layout>
+            //         }
+            //     </ul> */}
+            // // </Layout>
         )
     }
 }
