@@ -1,4 +1,5 @@
 // DON'T FORGET THE WIREFRAME
+
 // MAKE A CONTROLLER FOLDER AND FILE LATER AND MOVE THE ROUTES INTO IT
 
 if(process.env.NODE_ENV === 'development') { 
@@ -12,8 +13,8 @@ if(process.env.NODE_ENV === 'development') {
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 const express = require('express');
 const methodOverride  = require('method-override');
-const mongoose = require ('mongoose');
-const app = express ();
+const mongoose = require('mongoose');
+const app = express();
 const db = mongoose.connection;
 const show = console.log;
 // show('yasssss');
