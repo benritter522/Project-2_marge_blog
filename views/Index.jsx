@@ -17,11 +17,11 @@ class Index extends React.Component {
                 <nav>
                     <a href="/plants/new">Enter a new Plant</a>
                 </nav>
-                {/* <div className="indexAllPlants">
+                <div className="indexAllPlants">
                     {
                         plants.map((plant, index) => {
                             return (
-                                <div className="indexSinglePlant"> */}
+                                <div className="indexSinglePlant">
                                     {/* <div className="indexPlantClick"> */}
                                         {/* <a href={`/plants/${plant._id}`}>
                                             <p className="indexPlantName">{plant.name}</p>
@@ -35,11 +35,11 @@ class Index extends React.Component {
                                             <input className="indexPlantButton" type="submit" value={`EDIT THIS ${plant.name.toUpperCase()}`}/>
                                         </form><br/> */}
                                     {/* </div> */}
-                                {/* </div>
+                                </div>
                             )
                         })
                     }
-                </div> */}
+                </div>
             </Layout>
         )
     }
