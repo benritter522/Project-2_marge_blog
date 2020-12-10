@@ -22,18 +22,18 @@ class Index extends React.Component {
                         plants.map((plant, index) => {
                             return (
                                 <div className="indexSinglePlant">
-                                    {/* <div className="indexPlantClick"> */}
-                                        {/* <a href={`/plants/${plant._id}`}>
+                                    <div className="indexPlantClick">
+                                        {/* {/* <a href={`/plants/${plant._id}`}> */}
                                             <p className="indexPlantName">{plant.name}</p>
-                                            <img className="indexPlantImg" src={plant.img}/> */}
-                                            {/* <blockquote class="imgur-embed-pub" lang="en" data-id="a/hbqz8wq"  ><a href="//imgur.com/a/hbqz8wq">Christmas Cactus Flower</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script> */}
-                                        {/* </a><br/><br/>
+                                            <img className="indexPlantImg" src={plant.img}/>
+                                            <blockquote class="imgur-embed-pub" lang="en" data-id="a/hbqz8wq"  ><a href="//imgur.com/a/hbqz8wq">Christmas Cactus Flower</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+                                        </a><br/><br/>
                                         <form className="indexPlantButtonForm" method="POST" action={`/plants/${plant._id}?_method=DELETE`}>
                                             <input className="indexPlantButton" type="submit" value={`DELETE THIS ${plant.name.toUpperCase()}`}/>
                                         </form><br/>
                                         <form className="indexPlantButtonForm" method="GET" action={`/plants/${plant._id}/edit`}>
                                             <input className="indexPlantButton" type="submit" value={`EDIT THIS ${plant.name.toUpperCase()}`}/>
-                                        </form><br/> */}
+                                        </form><br/>
                                     {/* </div> */}
                                 </div>
                             )
