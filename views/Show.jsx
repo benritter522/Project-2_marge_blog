@@ -5,7 +5,8 @@ class Show extends React.Component {
     render() {
         const plant = this.props.plant;
         return(
-            <Layout title="Show Page"
+            <Layout 
+            title="Show Page"
                 stylesheet="/css/style.css"
                 // js="index.js"
             >

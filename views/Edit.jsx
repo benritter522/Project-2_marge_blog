@@ -25,9 +25,9 @@ class Edit extends React.Component {
                             Fungus Gnats: <input className="editCheckBox" type="checkbox" id="editCheckBox" name="hasFungusGnats"/><br/><br/>
                             {/* <label htmlFor="newCheckBox"></label> */}
                         {/* </div> */}
-                        <input type="submit" className="editSubmit" value="EDIT PLANT"/>
+                        <input type="submit" className="editSubmit" value="UPDATE PLANT"/>
                     </form>
-                    
+
                 </div>
             </Layout>
         )

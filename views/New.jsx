@@ -10,6 +10,7 @@ class New extends React.Component {
                 // js="index.js"
             >
                 {/* <h1>Enter New Plant's Details:</h1> */}
+                <h1>New Plant</h1>
                 <div className="newInputForm">
                     <form className="inputForm" action="/plants" method="POST">
                         Nickname:       <input className="newTextbox" type="text" name="nickname" value="Nickname"/><br/><br/>

@@ -82,10 +82,18 @@ app.engine('jsx', require('express-react-views').createEngine());
 //                                  NON-RESTFUL ROUTES
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-//localhost:3000 
+//Home on heroku main page or localhost:3000 
 app.get('/' , (req, res) => {
-    res.send('Hello World!');
+    res.render('Home');
 });
+
+app.get('/contact', (req, res) => {
+    res.render('Contact');
+});
+
+app.get('/about', (req, res) => {
+    res.render('About');
+})
 
 // ======================================================================================
 //                  REST ROUTES - "REpresentational State Transfer" - INDUCES
