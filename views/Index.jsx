@@ -15,7 +15,7 @@ class Index extends React.Component {
                     <h1>Here are my plants!</h1>
                 </header>
                 <nav>
-                    <a href="/plants/new">Enter a new Plant</a>
+                    {/* <a href="/plants/new">Enter a new Plant</a> */}
                 </nav>
                 <div className="indexAllPlants">
                     {
@@ -24,7 +24,10 @@ class Index extends React.Component {
                                 <div className="indexSinglePlant">
                                     {/* <div className="indexPlantClick"> */}
                                         <a href={`/plants/${plant._id}`}>
+                                        <p className="indexPlantNickname">{plant.nickname} the </p>
+
                                             <p className="indexPlantName">{plant.name}</p>
+
                                             <img className="indexPlantImg" src={plant.img}/>
                                             {/* <blockquote class="imgur-embed-pub" lang="en" data-id="a/hbqz8wq"  ><a href="//imgur.com/a/hbqz8wq">Christmas Cactus Flower</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script> */}
                                         </a><br/><br/>

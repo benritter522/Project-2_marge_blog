@@ -8,7 +8,7 @@ class Layout extends React.Component {
                     <meta charSet="utf-8"/>
                     <link rel="stylesheet" href={this.props.stylesheet}/>
                     {/* <a href={'/plants'}>Go Back Home</a><br/> */}
-                    <h1>{this.props.heading}</h1>
+                    {/* <h1>{this.props.heading}</h1> */}
                 </head>
                 <body>
                     {/* <h1>{this.props.heading}</h1> */}
@@ -20,6 +20,8 @@ class Layout extends React.Component {
                     {/* <script src={this.props.js}></script> */}
                     {/* <a href={'/plants/new'}>Create a New Plant</a><br/>             */}
                 </body>
+                <br/>
+                <p>Created by bitingRent</p>
             </html>
         )
     }

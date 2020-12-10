@@ -1,12 +1,31 @@
 * {
-    background-color: aqua;
-    border: 1px solid gray;
+    background-color: white;
+    /* border: 1px solid gray; */
+    padding: 0;
+    margin: 0;
 }
 
+body {
+    background-color: lightgray;
+
+}
+h1 {
+    text-align: center;
+    padding: 1em;
+    background-color: forestgreen;
+}
 nav {
+    padding: 1em;
+    background-color: aqua;
     display: flex;
     /* flex-direction: row; */
     justify-content: space-around;
+}
+nav a {
+    /* font-style: none; */
+    color: black;
+    background-color: aqua;
+
 }
 input {
     background-color: lightgray;
@@ -19,7 +38,8 @@ input {
 input[type="submit"] {
     color: black;
     height: 2em;
-    width: 15em;}
+    width: 15em;
+}
 
 
 
@@ -49,11 +69,15 @@ input[type="submit"] {
     height: 2em;
     width: 10em;
 }
+.indexPlantName {
+    background-color: white;
+}
 
 .indexPlantImg {
     width: 100%;
 }
 .indexAllPlants {
+    background-color: tan;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -63,13 +87,13 @@ input[type="submit"] {
     border: 1px solid black;
     width: 20rem;
     height: 20rem;
-    margin: .5rem;
-    padding: .5rem;
+    margin: 1rem;
+    padding: 1rem;
     text-align: center;
     /* box-sizing: border-box; don't use this*/
 }
 .indexPlantButtonForm {
-    background-color: goldenrod;
+    background-color: white;
     /* display: inline; */
 }
 .indexPlantButton {
@@ -79,4 +103,14 @@ input[type="submit"] {
 }
 .showImg { /* still have some pics showing with weird proportions..check out geodude */
     width: 100%;
+}
+.showPlant {
+    background: white;
+    border: 1px solid black;
+    width: 90vw;
+    /* width: 25rem;
+    height: 25rem; */
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
 }

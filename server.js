@@ -124,10 +124,10 @@ app.delete('/plants/:id', (req, res) => {
 })
 
 // Update '/<nameOfResource>/:id' PUT
-app.put('/:id', (req, res) => {
+app.put('/plants/:id', (req, res) => {
     Plant.findByIdAndUpdate(req.params.id, req.body, (err, updatedPlant) => {
         if(!err) {
-            res.send(updatedPlant);
+            res.redirect('/plants');
         } else {
             res.send(err);
         }
@@ -150,7 +150,8 @@ app.get('/plants/:id/edit', (req, res) => {
     Plant.findById(req.params.id, (err, foundPlant) => {
         if(!err) {
             res.render('Edit', {
-                fruit: foundPlant
+                plant: foundPlant,
+                mongoIndex: req.params.id
             })
         } else {
             res.send(err);
