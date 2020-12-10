@@ -1,3 +1,82 @@
 * {
     background-color: aqua;
+    border: 1px solid gray;
+}
+
+nav {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-around;
+}
+input {
+    background-color: lightgray;
+    color: gray;
+    border-radius: .25em;
+    height: 1em;
+    width: 10em;
+}
+
+input[type="submit"] {
+    color: black;
+    height: 2em;
+    width: 15em;}
+
+
+
+/* input[type="checkbox"] {
+    vertical-align: middle;
+} */
+
+/* .newInputForm {
+    color: gray;
+    border: 1px solid gray;
+
+    text-align: 
+} */
+
+.inputForm {
+    display: flex;
+    flex-direction: column;
+    justify-items: right;
+}
+.newCheckBox {
+    display: inline;
+    height: 2em;
+    width: 2em;
+}
+.newSubmit {
+    color: black;
+    height: 2em;
+    width: 10em;
+}
+
+.indexPlantImg {
+    width: 100%;
+}
+.indexAllPlants {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.indexSinglePlant {
+    background: white;
+    border: 1px solid black;
+    width: 20rem;
+    height: 20rem;
+    margin: .5rem;
+    padding: .5rem;
+    text-align: center;
+    /* box-sizing: border-box; don't use this*/
+}
+.indexPlantButtonForm {
+    background-color: goldenrod;
+    /* display: inline; */
+}
+.indexPlantButton {
+    background-color: goldenrod;
+    /* height: 1em; */
+    /* width: 1em; */
+}
+.showImg { /* still have some pics showing with weird proportions..check out geodude */
+    width: 100%;
 }

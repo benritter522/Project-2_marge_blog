@@ -16,7 +16,8 @@ const methodOverride  = require('method-override');
 const mongoose = require('mongoose');
 const app = express();
 const db = mongoose.connection;
-const show = console.log;
+const Plant = require('./models/plants.js');
+// const show = console.log;
 // show('yasssss');
 
 // ======================================================================================
@@ -55,6 +56,12 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));// extended: false - does not allow nested objects in query strings
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 
+// making checkboxes easier
+app.use((req, res, next) => {
+    req.body.hasFungusGnats = req.body.hasFungusGnats === 'on' ? true : false;
+    next();
+})
+
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // replaced by method-override
@@ -89,29 +96,78 @@ app.get('/' , (req, res) => {
 // Index '/<nameOfResource>/new' GET
 app.get('/plants/', (req, res) => {
     // res.send('hello index');
-    res.render('Index');
+    Plant.find({}, (err, allPlants) => {
+        if(!err) {
+            res.render('Index', {
+                plants: allPlants
+            });
+        } else {
+            res.send(err);
+        }
+    })
 })
 
 // New '/<nameOfResource>/new' GET
-app.get('/plants/new/', (req, res) => {
-    // res.send('hello new');
+app.get('/plants/new', (req, res) => {
     res.render('New');
 });
 
 // Delete '/<nameOfResource>/:id' DELETE
+app.delete('/plants/:id', (req, res) => {
+    Plant.findByIdAndRemove(req.params.id, (err, _) => { // don't need foundPlant, put an underscore as a 'don't need it' placeholder 
+        if(!err) {
+            res.redirect('/plants');
+        } else {
+            res.send(err);
+        }
+    })
+})
 
 // Update '/<nameOfResource>/:id' PUT
+app.put('/:id', (req, res) => {
+    Plant.findByIdAndUpdate(req.params.id, req.body, (err, updatedPlant) => {
+        if(!err) {
+            res.send(updatedPlant);
+        } else {
+            res.send(err);
+        }
+    })
+})
 
 // Create '/<nameOfResource>/' POST 
+app.post('/plants', (req, res) => {
+    Plant.create(req.body, (err, createdPlant) => {
+        if(!err) {
+            res.redirect('/plants');
+        } else {
+            res.send(err);
+        }
+    })
+});
 
 // Edit '/<nameOfResource>/:id/edit' GET
 app.get('/plants/:id/edit', (req, res) => {
-    res.render('Edit');
-});
+    Plant.findById(req.params.id, (err, foundPlant) => {
+        if(!err) {
+            res.render('Edit', {
+                fruit: foundPlant
+            })
+        } else {
+            res.send(err);
+        }
+    })});
 
 // Show '/<nameOfResource>/:id' GET 
-app.get('/plants/:id/', (req, res) => {
-    res.render('Edit');
+app.get('/plants/:id', (req, res) => {
+    Plant.findById(req.params.id, (err, foundPlant) => {
+        if(!err) {
+            res.render('Show', {
+                plant: foundPlant
+            })
+        } else {
+            res.send(err);
+        }
+    })
 });
 
 // ======================================================================================

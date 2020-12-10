@@ -7,18 +7,18 @@ class Layout extends React.Component {
                 <head>
                     <meta charSet="utf-8"/>
                     <link rel="stylesheet" href={this.props.stylesheet}/>
-                    <title>{this.props.title}</title>
+                    {/* <a href={'/plants'}>Go Back Home</a><br/> */}
+                    <h1>{this.props.heading}</h1>
                 </head>
                 <body>
-                    <h1>{this.props.title}</h1>
+                    {/* <h1>{this.props.heading}</h1> */}
                     <nav>
-                        <ul>
-                        {/* <li className="navLI"><a href="/fruits">Home</a></li>
-                        <li className="navLI"><a href="/fruits/new">Create a New Fruit</a></li> */}
-                        </ul>
+                        <p className="navLI"><a href="/plants">Home</a></p>
+                        <p className="navLI"><a href="/plants/new">Create a New Plant</a></p>
                     </nav>
                     {this.props.children}
                     {/* <script src={this.props.js}></script> */}
+                    {/* <a href={'/plants/new'}>Create a New Plant</a><br/>             */}
                 </body>
             </html>
         )
